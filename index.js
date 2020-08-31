@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 
 // константы
 const port = 8080;
@@ -6,7 +7,14 @@ const port = 8080;
 // приложение
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  fs.readFile('data/data.json', 'utf-8', (error, data) => {
+
+    if (error != undefined) {
+      throw new Error(error.message);
+    }
+
+    res.send(`${JSON.parse(data).payload} ${new Date()}`);
+  });
 });
 
 app.listen(port, () => {
