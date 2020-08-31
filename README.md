@@ -37,7 +37,7 @@
 остановить контейнер с идентификатором \<container-id>/\<container-name>
 ***
 
-## docker rm \<container-id>/<container-name>
+## docker rm \<container-id>/\<container-name>
 удалить контейнер с идентификатором \<container-id>/\<container-name>
 ***
 ## docker stop $(docker ps -q)
