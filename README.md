@@ -15,6 +15,7 @@
 -p \<inner-port-name>:\<outer-port-name> - прокинуть данные со внутреннего порта на внешний порт   
 -e TZ=Europe/Samara - задание переменных окружения   
 -v \<host-folder>:\<docker-folder> - указать папку в качестве источника внешних данных, host-folder - абсолютный путь, начиная с диска в Windows, с прямыми слешами, docker-folder - путь от корня, указанного в Dockerfile   
+-v \<volume-name>:\<docker-folder> - указать volume, к которому будет привязана указанная папка
 ***
 
 ## docker ps
@@ -45,4 +46,20 @@
 ***
 ## docker rm $(docker ps -aq)
 удалить все имеющиеся контейнеры
+***
+
+## docker volume ls
+показать список volumes
+***
+
+## docker volume create \<name>
+создать volume с именем \<name>
+***
+
+## docker rmi \<image-id>
+удалить образ с id \<image-id>
+***
+
+## docker rmi $(docker images -q)
+удалить все images
 ***
